@@ -1,0 +1,1 @@
+The original verifier only checks that /app/report.json exists and is non-empty. Any incorrect JSON with wrong values, missing keys, or fabricated statistics would still pass. The verifier should parse the JSON and verify the required fields (total_requests, unique_ips, and top_path) against the expected values computed from access.log.
