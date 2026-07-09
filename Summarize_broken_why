@@ -1,0 +1,17 @@
+The task had issues in four areas:
+
+1. Format:
+- task.toml defined artifacts as a string instead of a top-level array.
+- The artifact path pointed to /app/out.json while the solution generated /app/report.json.
+
+2. Environment:
+- The Dockerfile used an unpinned base image (python:latest).
+- The reference solution (solution_hint.py) was copied into the agent image, leaking the correct implementation.
+
+3. Verifier:
+- The original verifier only checked whether report.json existed and was non-empty.
+- It did not validate the JSON contents, so incorrect outputs could still pass.
+
+4. Instructions:
+- instruction.md was ambiguous and did not specify the required output filename, JSON format, or required fields.
+- The instructions were rewritten to match the verifier exactly by requiring report.json with total_requests, unique_ips, and top_path.
