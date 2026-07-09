@@ -1,0 +1,3 @@
+bash tests/test.sh
+cat /app/reward.txt
+cat /app/ctrf.json
