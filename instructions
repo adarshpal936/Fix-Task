@@ -1,0 +1,11 @@
+Read the Apache-style access log located at /app/access.log.
+
+Generate a JSON report and save it as /app/report.json.
+
+The JSON object must contain exactly these fields:
+
+- total_requests: total number of non-empty log entries.
+- unique_ips: number of unique client IP addresses.
+- top_path: the most frequently requested request path.
+
+The report must be valid JSON and contain the correct values computed from the log.
